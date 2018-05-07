@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>标准化设计解决方案-标记语言和样式手册</title>
+    <style type="text/css">
+        #section7 .p1 ul {
+            margin: 0;
+            padding: 0 0 20px 10px;
+            border-bottom: 1px solid #696;
+        }
+
+        #section7 .p1 li {
+            margin: 0;
+            padding: 0;
+            display: inline;
+            list-style: none;
+        }
+
+
+        #section7 .p2 ul {
+            margin: 0;
+            padding: 0 0 20px 10px;
+            border-bottom: 1px solid #696;
+
+        }
+
+        #section7 .p2 li {
+            margin: 0;
+            padding: 0;
+            display: inline;
+            list-style-type: none;
+
+        }
+
+        #section7 .p2 a {
+            float: left;
+            line-height: 14px;
+            font-weight: bold;
+            margin: 0 10px 4px 10px;
+            text-decoration: none;
+            color: #9c9;
+        }
+
+
+        #section7 .p3 ul {
+            margin: 0;
+            padding: 0 0 20px 10px;
+            border-bottom: 1px solid #696;
+        }
+
+        #section7 .p3 li {
+            margin: 0;
+            padding: 0;
+            display: inline;
+            list-style-type: none;
+        }
+
+        #section7 .p3 a {
+            float: left;
+            line-height: 14px;
+            font-weight: bold;
+            margin: 0 10px 4px 10px;
+            text-decoration: none;
+            color: #9c9;
+        }
+
+        #section7 .p3 a.active,
+        #section7 .p3 a:hover {
+            border-bottom: 4px solid #696;
+            padding-bottom: 2px;
+            color: #363;
+        }
+
+        #section7 .p3 a:hover {
+            color: #696;
+        }
+
+        #section8 .p1 ul {
+            margin: 0;
+            padding: 0 0 20px 10px;
+            border-bottom: 1px solid #9FB1BC;
+        }
+
+        #section8 .p1 li {
+            margin: 0;
+            padding: 0;
+            display: inline;
+            list-style-type: none;
+        }
+
+        #section8 .p1 a {
+            float: left;
+            line-height: 14px;
+            font-weight: bold;
+            padding: 0 12px 6px 12px;
+            text-decoration: none;
+            color: #708491;
+        }
+
+        #section8 .p1 a.active,
+        #section8 .p1 a:hover {
+            color: #000;
+            background: url(tab1.png) no-repeat bottom center;
+        }
+    </style>
+</head>
+
+<body id="chapter1-2">
+
+    <div id="pageHeader">
+        <header>
+            <h1>第1章 清单
+            </h1>
+        </header>
+    </div>
+
+
+    <div id="section7">
+        <h2>
+            导航清单
+        </h2>
+        <h3>
+            第一步
+        </h3>
+        <div class="p1">
+            <ul>
+                <li>
+                    <a href="/apples/">Apples</a>
+                </li>
+
+                <li>
+                    <a href="/spaghetti/">Spaghetti</a>
+                </li>
+
+                <li>
+                    <a href="/greenbeans/">Green Beans</a>
+                </li>
+
+                <li>
+                    <a href="/milk/">Milk</a>
+                </li>
+            </ul>
+        </div>
+
+        <p> 把 display设置成inline,往垂直清单转化成水平清单迈出了第一步</p>
+        <h3>
+            第二步
+        </h3>
+
+        <div class="p2">
+            <ul>
+                <li>
+                    <a href="/apples/">Apples</a>
+                </li>
+
+                <li>
+                    <a href="/spaghetti/">Spaghetti</a>
+                </li>
+
+                <li>
+                    <a href="/greenbeans/">Green Beans</a>
+                </li>
+
+                <li>
+                    <a href="/milk/">Milk</a>
+                </li>
+            </ul>
+        </div>
+        <p> 把清单转化成水平导航条的第二步,是将我们的链接全部浮动到左边显示 在这里我们将清单中所有的元素都定义float:left,是为了让他们能水平显示排列于一行之内,</p>
+        <h3>
+            第三步
+        </h3>
+        <div class="p3">
+            <ul>
+                <li>
+                    <a href="/apples/">Apples</a>
+                </li>
+
+                <li>
+                    <a href="/spaghetti/">Spaghetti</a>
+                </li>
+
+                <li>
+                    <a href="/greenbeans/">Green Beans</a>
+                </li>
+
+                <li>
+                    <a href="/milk/">Milk</a>
+                </li>
+            </ul>
+        </div>
+        <p> 为鼠标滑过或选中的链接创建一个模拟分页标签的边线 </p>
+
+    </div>
+
+
+    <div id="section8">
+        <h2>
+            迷你分页标签的外观
+        </h2>
+
+        <div class="p1">
+            <ul>
+                <li>
+                    <a href="/apples/">Apples</a>
+                </li>
+
+                <li>
+                    <a href="/spaghetti/">Spaghetti</a>
+                </li>
+
+                <li>
+                    <a href="/greenbeans/">Green Beans</a>
+                </li>
+
+                <li>
+                    <a href="/milk/">Milk</a>
+                </li>
+            </ul>
+        </div>
+
+        <p> 用 background-image 定义了在鼠标划过或选中的时候显示在链接底部中间的图片来代替了原本的4个像素高的底部边框.</p>
+
+    </div>
+
+</body>
+
+</html>

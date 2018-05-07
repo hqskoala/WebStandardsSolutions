@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>标准化设计解决方案-标记语言和样式手册</title>
+    <style type="text/css">
+        #section1 .p1 {
+            width: 500px;
+            padding: .5em;
+            border: solid 1px;
+        }
+
+        #section1 .p2 {
+            width: 200px;
+            padding: .5em;
+            border: solid 1px;
+        }
+
+        #section1 .p3 {
+            width: 500px;
+            font-size: 40px;
+            padding: .5em;
+            border: solid 1px;
+        }
+
+        #section4 .p1 {
+            width: 500px;
+            padding: .5em;
+            border: solid 1px;
+        }
+
+        #section4 .p2 {
+            width: 200px;
+            padding: .5em;
+            border: solid 1px;
+        }
+
+        #section4 .p3 {
+            width: 500px;
+            font-size: 40px;
+            padding: .5em;
+            border: solid 1px;
+        }
+
+        #section6 .p1,
+        #section6 .p2,
+        #section6 .p3,
+        #section6 .p4 {
+            width: 500px;
+            border: solid 1px;
+        }
+
+        #section6 .p1 ul {
+            list-style: none;
+        }
+
+        #section6 .p2 ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #section6 .p3 ul {
+            list-style: none;
+            padding-left: 25px;
+            list-style-image: url(hot.png)
+        }
+
+        #section6 .p4 ul {
+            list-style: none;
+
+        }
+
+        #section6 .p4 li {
+            background: url(hot.png) no-repeat 0 50%;
+            padding-left: 25px;
+        }
+    </style>
+</head>
+
+<body id="chapter1-1">
+
+    <div id="pageHeader">
+        <header>
+            <h1>第1章 清单
+            </h1>
+        </header>
+    </div>
+
+    <div id="section1">
+        <h2>
+            方法 A: 用 br 换行
+        </h2>
+        <p class="p1">
+            Apples
+            <br /> Spaghetti
+
+            <br /> Green Beans
+            <br /> Milk
+
+            <br />
+        </p>
+        <h3>
+            折行
+        </h3>
+        <p> 水平空间不足</p>
+        <p class="p2">
+            Apples
+            <br /> Spaghetti
+
+            <br /> Green Beans
+            <br /> Milk
+
+            <br />Five Foot Loaf of Anthony's Italian Bread
+        </p>
+        <p> 调大字体</p>
+        <p class="p3">
+            Apples
+            <br /> Spaghetti
+
+            <br /> Green Beans
+            <br /> Milk
+
+            <br />Five Foot Loaf of Anthony's Italian Bread
+        </p>
+        <p> 在这里我要在本质上阐明一个观点 - 使用方法A ,并没有把阅读网页时的这些设计师们所无法控制的变数考虑在内.
+        </p>
+    </div>
+
+
+    <div id="section2">
+        <h2>
+            方法 B: 会咬人的小圆点
+        </h2>
+        <h3>
+            麻烦检查一下
+        </h3>
+        <p class="p1">
+
+            <li>Apples
+                <br />
+
+                <li>Spaghetti
+                    <br />
+
+                    <li>Green Beans
+                        <br />
+
+                        <li>Milk
+                            <br />
+
+        </p>
+        <p> 根据W3C的XHTML 1.0规范,所有的标签最后都必须要闭合起来</p>
+        <p> 养成编写正确的标签语法的习惯非常重要,正确的编写标签语法,我们可以不必在未来担心由于没有闭合标签或者不正确的嵌套元素所带来的问题.如果有人阅读这些源代码的话,也可以使他们更加深入的理解源代码想要达成的效果. 记得善用W3C的在线检测工具(http://validator.w3.org/)来检查你提交的URI或者上传的文档,最终你会觉得这样做非常值得.
+
+        </p>
+    </div>
+    <div id="section3">
+        <h2>
+            方法 C: 接近了
+        </h2>
+        <p class="p1">
+
+
+            <li>Apples</li>
+
+            <li>Spaghetti</li>
+
+            <li>Green Beans</li>
+
+            <li>Milk</li>
+
+
+        </p>
+
+        <p> 语义化标签的意义就在于将内容根据他们所属的类别进行结构性的搭建.</p>
+        <p> 块级(block-level)与行内(inline): HTML元素可以分为块级与行内两大类型,块级元素会从新行开始,最后接着一个断行,而行内元素则会与其他的行内元素显示在同一行内,块级元素可以包括其他块级元素和行内元素,而行内元素里面不能包含块级元素.</p>
+
+        <p class="p2">
+
+
+            <grocerylist>
+
+                <item>Apples</item>
+
+                <item>Spaghetti</item>
+
+                <item>Green Beans</item>
+
+                <item>Milk</item>
+
+            </grocerylist>
+        </p>
+        <p> 虽然在这本书里我并不直接处理XML,但是这些原则也适用于XHTML世界,如果文档使用非常语义化的标签结构,将可以提升文档今后的灵活度,不管是为结构清晰的文档加上css样式表还是修改容易理解的文档 — 只要提供正确的结构,就能节省许多今后在维护时可能浪费掉的时间.</p>
+    </div>
+
+    <div id="section4">
+        <h2>
+
+            方法 D: 愉快的包装者
+
+        </h2>
+        <div class="p1">
+
+            <ul>
+
+                <li>Apples</li>
+
+                <li>Spaghetti</li>
+
+                <li>Green Beans</li>
+
+                <li>Milk</li>
+
+            </ul>
+
+        </div>
+
+        <p> 独占一行，小圆点符号，正确的行内缩进换行</p>
+
+        <div class="p2">
+
+            <ul>
+
+                <li>Apples</li>
+
+                <li>Spaghetti</li>
+
+                <li>Green Beans</li>
+
+                <li>Milk</li>
+                <li>Five Foot Loaf of Anthony's Italian Bread</li>
+
+            </ul>
+        </div>
+        <p> 换行的文字会行内缩进到与第一行文字对齐的位置</p>
+        <div class="p3">
+
+            <ul>
+
+                <li>Apples</li>
+
+                <li>Spaghetti</li>
+
+                <li>Green Beans</li>
+
+                <li>Milk</li>
+                <li>Five Foot Loaf of Anthony's Italian Bread</li>
+
+            </ul>
+
+        </div>
+        <p> 换行的文字会行内缩进到与第一行文字对齐的位置</p>
+    </div>
+
+    <div id="section5">
+        <h2>
+
+            总结
+
+        </h2>
+        <div class="p1">
+
+            <ul>
+
+                <li>方法A:无法为清单加上独特的样式，缺乏语义性 </li>
+
+                <li>方法B:不标准</li>
+
+                <li>方法C:不标准</li>
+
+                <li>方法D:符合标准! 使文档语义化,结构性 </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div id="section6">
+        <h2>
+            技巧延伸
+        </h2>
+        <h3>
+            扔掉圆点
+        </h3>
+        <div class="p1">
+
+            <ul>
+
+                <li>Apples</li>
+
+                <li>Spaghetti</li>
+
+                <li>Green Beans</li>
+
+                <li>Milk</li>
+
+            </ul>
+
+        </div>
+
+        <p> </p>
+
+        <div class="p2">
+
+            <ul>
+
+                <li>Apples</li>
+
+                <li>Spaghetti</li>
+
+                <li>Green Beans</li>
+
+                <li>Milk</li>
+
+            </ul>
+        </div>
+        <p> </p>
+        <h3>
+            自定义圆点
+        </h3>
+        <div class="p3">
+
+            <ul>
+
+                <li>Apples</li>
+
+                <li>Spaghetti</li>
+
+                <li>Green Beans</li>
+
+                <li>Milk</li>
+
+            </ul>
+
+        </div>
+        <p> list-style-image 存在兼容性问题</p>
+        <div class="p4">
+
+            <ul>
+
+                <li>Apples</li>
+
+                <li>Spaghetti</li>
+
+                <li>Green Beans</li>
+
+                <li>Milk</li>
+
+            </ul>
+
+        </div>
+        <p> 背景图background-image</p>
+    </div>
+
+
+</body>
+
+</html>
