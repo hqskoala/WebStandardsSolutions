@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>标准化设计解决方案-标记语言和样式手册</title>
+    <style type="text/css">
+        #section2 .p1 .heading {
+            font-size: 24px;
+            font-weight: bold;
+            color: blue;
+        }
+
+        #section5 .p1 h1 {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            color: #369;
+        }
+
+        #section5 .p2 h1 {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            color: #369;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #999;
+        }
+
+        #section5 .p3 h1 {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            color: #fff;
+            padding: 4px;
+            background-color: #696;
+        }
+
+        #section5 .p4 h1 {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            color: #666;
+            padding: 4px;
+            background-color: #ddd;
+            border-bottom: 2px solid #ccc;
+        }
+
+        #section5 .p5 h1 {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            color: #369;
+            padding-bottom: 14px;
+            background: url(10x10.png) repeat-x bottom;
+        }
+
+        #section5 .p6 h1 {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            color: #369;
+            padding-left: 30px;
+            background: url(icon.png) no-repeat 0 50%;
+        }
+    </style>
+</head>
+
+<body id="chapter2-1">
+
+    <div id="pageHeader">
+        <header>
+            <h1>第2章 标题
+            </h1>
+        </header>
+    </div>
+
+
+    <div id="section1">
+        <h2>
+            总览
+        </h2>
+        <p> 标题的作用是"简要的描述往后章节所讨论的主题",W3C这样描述 — 显示网页内各个段落的概要.</p>
+
+        <h2>
+            创建文档标题的最好方法是什么?
+        </h2>
+
+    </div>
+
+
+    <div id="section2">
+        <h2>方法A:有意义吗?
+        </h2>
+        <h3>
+
+        </h3>
+        <div class="p1">
+            <span class="heading">Super Cool Page Title</span>
+        </div>
+
+        <p> 虽然span标签在某些场合会是个方便的标签,但是对于页面标题来说,它的意义并不大,使用这个方法的唯一好处是我们可以为 heading 类指定一个css样式,以便让文字看起来像是个标题.</p>
+        <p> 搜索引擎在抓取到这个页面时,会跳过span标签.</p>
+        <p> span 标签是一个行内元素,我们大多需要把方法A的内容在放置到另一个块级容器中.</p>
+
+    </div>
+
+    <div id="section3">
+        <h2>方法B: P和B的组合
+        </h2>
+        <h3>
+            难以加上样式
+        </h3>
+        <div class="p1">
+            <p>
+                <b>Super Cool Page Title</b>
+            </p>
+        </div>
+
+        <p> 仍然要面对同样缺少语义性的结果.</p>
+
+    </div>
+
+    <div id="section4">
+        <h2>方法C:样式与实质
+        </h2>
+        <h3>
+            容易定义样式
+        </h3>
+        <div class="p1">
+
+            <h1>Super Cool Page Title</h1>
+
+        </div>
+
+        <h3>
+            讨厌的默认样式
+        </h3>
+        <h3>
+            对搜索引擎的友好
+        </h3>
+        <h3>
+            附带一提的标签顺序
+        </h3>
+        <p> 但是要记住,先写结构,再调整样式,我们可以在任何时候根据我们自己的喜好通过css改变标题标签的字体大小.</p>
+        <p> 传达了标题标签中的文字确切的含义. </p>
+
+    </div>
+
+    <div id="section5">
+        <h2>技巧延伸
+        </h2>
+        <h3>
+            简单的样式
+        </h3>
+        <div class="p1">
+
+            <h1>Super Cool Page Title</h1>
+
+        </div>
+        <p> </p>
+        <h3>
+            简单的样式
+        </h3>
+        <div class="p2">
+
+            <h1>Super Cool Page Title</h1>
+
+        </div>
+        <p> </p>
+        <h3>
+            加上背景
+        </h3>
+        <div class="p3">
+
+            <h1>Super Cool Page Title</h1>
+
+        </div>
+        <p> </p>
+        <h3>
+            背景和边框
+        </h3>
+        <div class="p4">
+
+            <h1>Super Cool Page Title</h1>
+
+        </div>
+        <p> </p>
+        <h3>
+            平铺背景
+        </h3>
+        <div class="p5">
+
+            <h1>Super Cool Page Title</h1>
+
+        </div>
+        <p> </p>
+        <h3>
+            方便替换的图标
+        </h3>
+        <div class="p6">
+
+            <h1>Super Cool Page Title</h1>
+
+        </div>
+        <p> </p>
+        <h3>
+            容易更新
+        </h3>
+
+        <p>如果把这些并不十分重要的,装饰性的图标整合到一个css文件中,只要花上几分钟就能够一次性换掉整站的所有图标,带来崭新的外观!由此你应该可以渐渐明白到结构标记和显示效果分离的好处了吧. </p>
+    </div>
+</body>
+
+</html>
