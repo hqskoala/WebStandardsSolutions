@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>标准化设计解决方案-标记语言和样式手册</title>
+    <style type="text/css">
+        #section7 .p1 ul {
+            margin: 0;
+            padding: 0 0 20px 10px;
+            border-bottom: 1px solid #696;
+        }
+    </style>
+</head>
+
+<body id="chapter4-1">
+
+    <div id="pageHeader">
+        <header>
+            <h1>第4章 引用
+            </h1>
+        </header>
+    </div>
+
+
+    <div id="section1">
+        <p> 所有类型的网站都经常会使用引用，不管是引用其他网页、作者或出版物的内容，以标准方法标记引用内容是非常有好处的。因为一旦完成结构之后，只需要一些简单的css就能把引用内容变成漂亮的设计元素。
+        </p>
+        <h2>
+
+        </h2>
+        <h3>
+            方法A：缺乏语义
+        </h3>
+        <div class="p1">
+
+            <p>"Misquotations are the only quotations that are never misquoted."</p>
+            <p>— Hesketh Pearson</p>
+
+        </div>
+
+        <p> 方法A的标记方法与页面上的其他段落并没有不同，因此我们没有办法为它设定不同的样式，内容里的双引号就变成了引用内容的唯一提示了。 </p>
+        <h3>
+            方法B:以class处理?
+        </h3>
+
+        <div class="p2">
+
+            <div class="quotation">
+
+                <p>Misquotations are the only quotations that are never misquoted.
+
+                </p>
+
+                <p>— Hesketh Pearson </p>
+
+            </div>
+
+        </div>
+        <p> 为它指定独特的css样式,但是HTML拥有专门解决这个问题的完美标签</p>
+        <h3>
+            方法C: blockquote最棒
+        </h3>
+        <div class="p3">
+
+            <blockquote>
+                <p>Misquotations are the only quotations that are never misquoted.</p>
+                <p>— Hesketh Pearson </p>
+            </blockquote>
+
+        </div>
+        <p> W3C建议使用 blockquote 标记长引用(区块级内容),这个标签正是为了处理我们正在讨论的状况设计的,借着使用这个标签,我们能为内容加上结构意义,同时能提供独特的标记以便为可视化浏览器设定样式. </p>
+        <h3>
+            用起子钉钉子
+        </h3>
+        <p> 不幸的,这是个非常糟糕的习惯,补救方法之一,是改用适当的元素加上css的padding-left或margin-left属性,以往 blockquote 常被这样滥用来设定显示效果,而不是用来标记内容结构.
+        </p>
+        <p> 因此W3C建议将描述引用符号的责任交给样式表,不希望浏览器主动显示 </p>
+    </div>
+
+
+    <div id="section2">
+        <h2>
+            迷你分页标签的外观
+        </h2>
+
+        <h3>
+            给好奇宝宝的参考资料
+        </h3>
+        <div class="p1">
+
+            <blockquote cite="http://www.somewebsite.com/path/to/page.html">
+                <p>Misquotations are the only quotations that are never misquoted. </p>
+                <p>— Hesketh Pearson </p>
+            </blockquote>
+
+        </div>
+        <p> W3C建议使用 blockquote 标记长引用(区块级内容),这个标签正是为了处理我们正在讨论的状况设计的,借着使用这个标签,我们能为内容加上结构意义,同时能提供独特的标记以便为可视化浏览器设定样式. </p>
+
+        <h3>
+            行内引用
+        </h3>
+        <div class="p2">
+
+            I said,
+            <q>Herman, do you like bubblegum?</q> And he said,
+            <q>Yes, the kind that comes with a comic.</q>
+
+        </div>
+        <p> </p>
+
+        <h3>
+            不需要引号
+        </h3>
+        <div class="p3">
+
+            I said,
+            <q lang="en-us">Herman, do you like bubblegum? </q> And he said,
+            <q lang="en-us">Yes, the kind that comes with a comic.</q>
+
+        </div>
+        <p> </p>
+
+        <h3>
+            嵌套的行内引用
+        </h3>
+        <div class="p4">
+
+            I said,
+            <q lang="en-us">Herman, do you like bubblegum? </q> And he said,
+            <q lang="en-us">Yes. Bubblegum is what Harry calls
+                <q lang="en-us">delicious</q>.</q>
+        </div>
+        <p> </p>
+    </div>
+
+
+    <div id="section3">
+        <h2>
+            为 blockquote 加上样式
+        </h2>
+
+        <h3>
+            给好奇宝宝的参考资料
+        </h3>
+        <div class="p1">
+
+            <blockquote cite="http://www.somewebsite.com/path/to/page.html">
+                <p>Misquotations are the only quotations that are never misquoted. </p>
+                <p>— Hesketh Pearson </p>
+            </blockquote>
+
+        </div>
+        <p> W3C建议使用 blockquote 标记长引用(区块级内容),这个标签正是为了处理我们正在讨论的状况设计的,借着使用这个标签,我们能为内容加上结构意义,同时能提供独特的标记以便为可视化浏览器设定样式. </p>
+        <h3>
+            结论
+        </h3>
+        <div class="p2">
+
+        </div>
+        <p> 在仔细研究过几种标识引用的不同方法之后,我们很容易就能找到处理问题的正确工具,也就是 blockquote ,单纯为了缩进文字而使用 blockquote 的时代已经过去了,我们现在用它来标记长引用. </p>
+        <p> 一旦完成了结构,就能轻易为 blockquote 加上样式,使他们区别于一般内容之外,同时仍能让不支持CSS的浏览器或其他设备正常解析内容 </p>
+
+    </div>
+
+</body>
+
+</html>
