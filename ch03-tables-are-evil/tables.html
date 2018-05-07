@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>标准化设计解决方案-标记语言和样式手册</title>
+    <style type="text/css">
+        #section1 .p2 table thead,
+        #section1 .p2 table tfoot,
+        #section1 .p2 table tbody {
+
+            border: solid 1px;
+        }
+
+        #section1 .p3 tbody {
+            background-color: gray;
+        }
+
+
+
+        #section2 .p1 table {
+            border-top: 1px solid #999;
+            border-left: 1px solid #999;
+            border-collapse: collapse;
+        }
+
+        #section2 .p1 caption {
+            font-family: Arial, sans-serif;
+            color: #993333;
+            padding-bottom: 6px;
+        }
+
+        #section2 .p1 th,
+        #section2 .p1 td {
+            padding: 10px;
+            border-right: 1px solid #999;
+            border-bottom: 1px solid #999;
+        }
+
+        #section2 .p1 th {
+            font-family: Verdana, sans-serif;
+            background: #ccc;
+        }
+    </style>
+</head>
+
+<body id="chapter3-1">
+
+    <div id="pageHeader">
+        <header>
+            <h1>第3章 邪恶的表格?
+            </h1>
+        </header>
+    </div>
+
+
+    <div id="section1">
+        <p> 以web标准编写网页的最大迷思就是"不要再使用表格了,永远不要!" </p>
+        <h2>
+            表格邪恶吗?
+        </h2>
+        <p> 我想,如果我们根据表格标签设计之初的目的好好使用的话,那么答案就肯定是"不!".滥用表格创建复杂嵌套的布局的行为理所当然会遭到谴责,但是表格的确会给资料区块提供它需要的良好的结构.
+        </p>
+
+        <h3>
+            table,tr,td,caption,th
+        </h3>
+        <div class="p1">
+
+            <table border="1" summary="This table is a chart of all Boston Red Sox World Series wins.">
+                <caption>Boston Red Sox World Series Championships</caption>
+                <tr>
+                    <th id="year">Year</th>
+                    <th id="opponent">Opponent</th>
+                    <th id="record" abbr="Record">Season Record (W-L)</th>
+                </tr>
+                <tr>
+                    <td>1918</td>
+                    <td>Chicago Cubs</td>
+                    <td>75-51</td>
+                </tr>
+                <tr>
+                    <td>1916</td>
+                    <td>Brooklyn Robins</td>
+                    <td>91-63</td>
+                </tr>
+                <tr>
+                    <td>1915</td>
+                    <td>Philadelphia Phillies</td>
+                    <td>101-50</td>
+                </tr>
+                <tr>
+                    <td>1912</td>
+                    <td>New York Giants</td>
+                    <td>105-47</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <p> table标签的summary属性，caption标签，th标签及id属性，</p>
+
+        <h3>
+            thead,tfoot和tbody
+        </h3>
+
+        <div class="p2">
+
+            <table summary="This table is a chart of all Boston Red Sox World Series wins.">
+                <caption>Boston Red Sox World Series Championships</caption>
+                <thead>
+                    <tr>
+                        <th id="year1">Year</th>
+                        <th id="opponent1">Opponent</th>
+                        <th id="record1" abbr="Record">Season Record (W-L)</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        ...table footer content...
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>1918</td>
+                        <td>Chicago Cubs</td>
+                        <td>75-51</td>
+                    </tr>
+                    <tr>
+                        <td>1916</td>
+                        <td>Brooklyn Robins</td>
+                        <td>91-63</td>
+                    </tr>
+                    <tr>
+                        <td>1915</td>
+                        <td>Philadelphia Phillies</td>
+                        <td>101-50</td>
+                    </tr>
+                    <tr>
+                        <td>1912</td>
+                        <td>New York Giants</td>
+                        <td>105-47</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <p> thead 与 tfoot 必须出现在 tbody 之前,让浏览器与其他设备能够先载入这些内容,以这种表格行分类方式标记表格 </p>
+        <h3>
+            只设置tbody的背景色
+        </h3>
+        <div class="p3">
+            <table summary="This table is a chart of all Boston Red Sox World Series wins.">
+                <caption>Boston Red Sox World Series Championships</caption>
+                <thead>
+                    <tr>
+                        <th id="year2">Year</th>
+                        <th id="opponent2">Opponent</th>
+                        <th id="record2" abbr="Record">Season Record (W-L)</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        ...table footer content...
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>1918</td>
+                        <td>Chicago Cubs</td>
+                        <td>75-51</td>
+                    </tr>
+                    <tr>
+                        <td>1916</td>
+                        <td>Brooklyn Robins</td>
+                        <td>91-63</td>
+                    </tr>
+                    <tr>
+                        <td>1915</td>
+                        <td>Philadelphia Phillies</td>
+                        <td>101-50</td>
+                    </tr>
+                    <tr>
+                        <td>1912</td>
+                        <td>New York Giants</td>
+                        <td>105-47</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p> </p>
+
+    </div>
+
+
+    <div id="section2">
+        <h2>
+
+        </h2>
+
+        <h3>
+            建立边框
+        </h3>
+        <div class="p1">
+
+            <table summary="This table is a chart of all Boston Red Sox World Series wins.">
+                <caption>Boston Red Sox World Series Championships</caption>
+                <tr>
+                    <th id="year3">Year</th>
+                    <th id="opponent3">Opponent</th>
+                    <th id="record3" abbr="Record">Season Record (W-L)</th>
+                </tr>
+                <tr>
+                    <td>1918</td>
+                    <td>Chicago Cubs</td>
+                    <td>75-51</td>
+                </tr>
+                <tr>
+                    <td>1916</td>
+                    <td>Brooklyn Robins</td>
+                    <td>91-63</td>
+                </tr>
+                <tr>
+                    <td>1915</td>
+                    <td>Philadelphia Phillies</td>
+                    <td>101-50</td>
+                </tr>
+                <tr>
+                    <td>1912</td>
+                    <td>New York Giants</td>
+                    <td>105-47</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <p> 只加上两侧边框,是建立各处边框等宽又同时让大部分流行的浏览器能够正确显示的关键所在.为表格元素加上border-collapse属性来去掉这些间隙</p>
+
+
+        <p> </p>
+
+    </div>
+
+</body>
+
+</html>
