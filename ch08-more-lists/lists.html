@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>标准化设计解决方案-标记语言和样式手册</title>
+    <style type="text/css">
+        #section1 .p1 li {
+            width: 200px;
+        }
+
+        #section1 .p2 ol li {
+            width: 200px;
+            list-style-type: upper-roman;
+        }
+    </style>
+</head>
+
+<body id="chapter1-1">
+
+    <div id="pageHeader">
+        <header>
+            <h1>第8章 再谈清单
+            </h1>
+        </header>
+    </div>
+
+
+    <div id="section1">
+        <h2>
+            编号项目清单的标记法,哪种最好?
+        </h2>
+        <h3>
+            方法A:乱中有序
+        </h3>
+        <div class="p1">
+            <ul>
+
+                <li>1. Chop the onions.</li>
+
+                <li>2. Saute the onions for 3 minutes.</li>
+
+                <li>3. Add 3 cloves of garlic.</li>
+
+                <li>4. Cook for another 3 minutes.</li>
+
+                <li>5. Eat.</li>
+
+            </ul>
+        </div>
+
+        <p> </p>
+        <h3>
+            方法B:有序清单
+        </h3>
+        <div class="p2">
+            <ol>
+
+                <li>Chop the onions.</li>
+
+                <li>Saute the onions for 3 minutes.</li>
+
+                <li>Add 3 cloves of garlic.</li>
+
+                <li>Cook for another 3 minutes.</li>
+
+                <li>Eat.</li>
+
+            </ol>
+        </div>
+        <p> 很长的清单项目在换行的时候,会缩进到产生的编号后面</p>
+        <p> 通过使用CSS的list-style-type属性换掉编号样式.</p>
+
+    </div>
+
+
+    <div id="section2">
+        <h2>
+            一群名词与解释的标记法,哪种更好?
+        </h2>
+        <h3>
+            方法A
+        </h3>
+        <div class="p1">
+            <ul>
+
+                <li>CSS
+                    <br /> A simple mechanism for adding style (e.g. fonts, colors, spacing) to Web documents.</li>
+
+                <li>XHTML
+                    <br /> A family of current and future document types and modules that reproduce, subset, and extend HTML, reformulated
+                    in XML.</li>
+
+                <li>XML
+                    <br /> A simple, very flexible text format derived from SGML.</li>
+
+            </ul>
+        </div>
+
+        <p> 如果我们想为每个名词(CSS,XHTML和XML)与定义内容指定不同的样式,那么要怎么做呢?</p>
+        <h3>
+            方法B
+        </h3>
+        <div class="p2">
+            <dl>
+
+                <dt>CSS</dt>
+
+                <dd>A simple mechanism for adding style (e.g. fonts, colors, spacing) to Web documents.</dd>
+
+                <dt>XHTML</dt>
+
+                <dd>A family of current and future document types and modules that reproduce, subset, and extend HTML, reformulated
+                    in XML.</dd>
+
+                <dt>XML</dt>
+
+                <dd>A simple, very flexible text format derived from SGML.</dd>
+
+            </dl>
+        </div>
+        <p> 定义清单( dl )内容由两种额外标签组成: dt (定义名词)以及 dd (定义描述).对我们的例子来说,定义清单完美符合内容代表的意义</p>
+        <p> 根据预设值,大多数可视化浏览器会将定义描述 dd 显示在独立的一行内,并且稍微缩进 </p>
+        <p> 语义上来说,方法B十分完整,让我们能为清单的每一个元素使用独立标签,这让我们能分别为名词,揭示内容制定特定样式. </p>
+        <h3>
+            其他应用
+        </h3>
+        <p> 必须指出:那就是定义清单的用途不仅限于标注名词,定义内容.定义清单还能用来标注对话,导航条,甚至是表单排版. </p>
+        <p> http://www.w3.org/TR/html4/struct/lists.html </p>
+        <p> 以 dl 标签建立的定义清单,通常包含一系列名词,定义内容(虽然定义清单也能应用在其他地方). </p>
+    </div>
+
+</body>
+
+</html>
