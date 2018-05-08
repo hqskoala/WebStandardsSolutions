@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>标准化设计解决方案-标记语言和样式手册</title>
+    <style type="text/css">
+        #section1 .p5 em.bold {
+            font-weight: bold;
+        }
+
+        #section1 .p6 strong.italic {
+            font-style: italic;
+        }
+
+        #section2 .p1 cite {
+            font-style: italic;
+            font-weight: bold;
+            color: red;
+            background-color: #ddd;
+        }
+
+        #section2 .p2 abbr,
+        #section2 .p3 acronym {
+            border-bottom: 1px dotted;
+            cursor: help;
+        }
+
+        #section2 .p4 code {
+            font-family: Courier, serif;
+            color: red;
+        }
+
+        #section2 .p6 var {
+            font-style: normal;
+            font-family: Courier, serif;
+            color: purple;
+        }
+    </style>
+</head>
+
+<body id="chapter6-1">
+
+    <div id="pageHeader">
+        <header>
+            <h1>第6章 strong,em与其他短语元素
+            </h1>
+        </header>
+    </div>
+
+
+    <div id="section1">
+        <p> 语义标签的概念,使用标签为文件标识意义,而不是单纯的以标签设定显示效果.设计完全使用语义标签的网页是个不错的点子.</p>
+        <p> 有个重要的概念必须放在心上:那就是尽量尝试撰写语义化结构将能带来实际的好处.</p>
+        <h2>
+            显示效果 VS 结构标签
+        </h2>
+        <h3>
+            为什么 strong 和 em 比 b 和 i 好?
+        </h3>
+        <p> 去掉 b 和 i 标签,替换成 strong 和 em 到底是有什么好处呢?其实这一切都是为了表达语义和结构,而不是为了只是显示效果.</p>
+
+        <h3>
+            看看专家怎么说
+        </h3>
+        <p> 短语元素能在文字片段之内加上结构信息,常见的短语元素意义如下: </p>
+        <p> em 代表强调</p>
+        <p> strong 代表更强烈的强调.</p>
+
+        <p> 短语元素的展示效果随着浏览器的不同,一般来说可视化浏览器应该以斜体显示 em 的文字内容,以粗体显示 strong 的文字内容 .</p>
+        <p> 相对之下, b 或是 i 只是单纯的显示效果标签.如果我们的目标是将结构与显示效果分离的话,使用 strong 和 em 就是正确的选择,单纯想要显示粗体,斜体文字的时候用css就好了.</p>
+
+        <h3>
+            粗体
+        </h3>
+
+        <div class="p1">
+            your order number for future reference is:
+            <b>6474-82071</b>.
+        </div>
+        <div class="p2">
+            your order number for future reference is:
+            <strong>6474-82071</strong>.
+        </div>
+        <p> 我们打算让句子内的特定文字显示的更加重要.除了粗体显示订单编号以外,我们也希望屏幕阅读器也改变它们表达这段内容的方式:提升音量,改变音调或速度.</p>
+        <h3>
+            斜体
+        </h3>
+
+        <div class="p3">
+            It took me not one,but
+            <i>three</i> hours to shovel my driveway this morning.
+        </div>
+        <div class="p4">
+            It took me not one,but
+            <em>three</em> hours to shovel my driveway this morning.
+        </div>
+        <p> 我的目的是使"three"这个字以强调语气表现,如同我大声念出这个字,视觉上,方法B在大多数浏览器里都会以斜体显示,而屏幕阅读器也会适当的调整音色,速度或音量.</p>
+        <h3>
+            只要粗体或斜体就好
+        </h3>
+        <p> 除了视觉特色外,我们并不打算特别强调链接内容,这里就是以CSS改变链接外观显示效果的好地方,让他们不会被屏幕阅读器以及其他非可视化浏览器特别强调.</p>
+        <p> font-weight:bold; </p>
+        <p> font-style:italic; </p>
+        <h3>
+            共用粗体与斜体
+        </h3>
+        <div class="p5">
+            Building sites with web standards can be
+            <em class="bold">fun</em>!
+        </div>
+        <p> 使用 em 就能达成斜体效果(同时在语义上强调了文字内容),而为它加上bold class则会使 em 之内的文字以粗体显示. </p>
+        <div class="p6">
+            Building sites with web standards can be
+            <strong class="italic">fun</strong>! </div>
+        <p> 我们能在加重强调某段文字的时候,设计italic class加上斜体效果,再配上 strong 原来就有的粗体效果. </p>
+
+        <p> 本书核心主题之一的良好范例:将内容与展示效果分开十分重要,很有好处:而将 b 与 i 标签换成结构上对等的标签(强调内容的时候)是个辅助达成这类分离目标的简单方法. </p>
+        <p> 大多数情况下,很适合以 strong 或 em 传达强调语气,而当你只是要追求视觉上的粗体,斜体效果时,就用CSS吧. </p>
+    </div>
+
+
+    <div id="section2">
+        <h2>
+            技巧延伸
+        </h2>
+        <h3>
+            cite的设计
+        </h3>
+        <div class="p1">
+            The novel,
+            <cite>The Scarlet Letter</cite> is set in Puritan Boston and like this book, was written in Salem, Massachusetts
+        </div>
+
+        <p> cite : 包含其他引用,参考来源的资讯.</p>
+        <p> 在大多数浏览器中都显示成斜体,也再度使页面内容变得结构化语义化.当然这个结构一样能发挥CSS.</p>
+
+        <h3>
+            abbr
+        </h3>
+        <div class="p2">
+            <abbr title="eXtensible HyperText Markup Language">XHTML</abbr>
+        </div>
+
+        <p> abbr 代表缩写名词(像WWW,HTTP,URL,Mass.等) </p>
+
+        <h3>
+            acronym
+        </h3>
+        <div class="p3">
+            <acronym title="North Atlantic Treaty Organization">NATO</acronym>
+        </div>
+        <p> acronym 代表略称(像WAC,radar等) </p>
+
+        <p> 在这里使用 abbr 会使屏幕阅读器拼出缩写内容(X-H-T-M-L),而不是念出完整内容,相对的,使用 acronym 的话则会让他念出完整内容,而不是缩写.</p>
+        <h3>
+            code
+        </h3>
+        <div class="p4">
+            <code>
+
+                #content { width: 80%; padding: 20px; background: blue; }
+
+            </code>
+        </div>
+        <p> code 元素的设计目的是在XHTML页面内展示代码示例,举例来说,当你想分享某段CSS时,你可以这样写: </p>
+
+        <h3>
+            samp
+        </h3>
+        <div class="p5">
+            <p>When the script has executed, at the command line you will see the message
+                <samp>script was successful!</samp>.</p>
+        </div>
+        <p> samp 元素是用来标识程序与script的示例输出的,举例来说,如果我想讨论正在编写的Perl script输出结果,我可能会标集成这样: </p>
+
+        <h3>
+            var
+        </h3>
+        <div class="p6">
+            <p>I'm going to pass the parameter
+                <var>lastUpdated</var> to my main.xsl file.</p>
+        </div>
+        <p> 与 samp 相关的, var 是用来标记程序的变量和引用用的,举例来说,如果我们正在讨论XSLT样式表,那么我能写下: </p>
+        <h3>
+            kbd
+        </h3>
+        <div class="p7">
+            <p>To quickly change focus to the search input field, Mac users type
+                <kbd>Command+9</kbd>.</p>
+        </div>
+        <p> kbd 元素可以用来标记使用者要输入的文字 ,举例来说,如果我正在解释如何使用刚才指定的accesskey把光标切换到搜索框内,我可能会这样写:</p>
+    </div>
+
+</body>
+
+</html>
