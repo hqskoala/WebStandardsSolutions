@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>标准化设计解决方案-标记语言和样式手册</title>
+    <style type="text/css">
+        #section1 .p2 input {
+            margin: 6px 0;
+        }
+
+        #thisform p {
+            margin: 6px 0;
+        }
+
+
+        #section1 .p6 form dd {
+            margin: 0;
+        }
+
+        #section1 .p6 form dt {
+            float: left;
+            padding-right: 10px;
+        }
+
+
+        #section2 .p3 form #name6,
+        #section2 .p3 form #email6 {
+            width: 200px;
+        }
+
+        #section2 .p3 form {
+            font-family: Georgia, serif;
+            font-size: 12px;
+            color: #999;
+        }
+
+        #section2 .p3 form label {
+            font-family: Verdana, sans-serif;
+            font-weight: bold;
+            color: #660000;
+        }
+
+
+        #section2 .p4 form {
+            font-family: Georgia, serif;
+            font-size: 12px;
+            color: #999;
+        }
+
+        #section2 .p4 form label {
+            font-family: Verdana, sans-serif;
+            font-weight: bold;
+            color: #660000;
+        }
+
+        #section2 .p4 form fieldset {
+            border: 1px solid #ccc;
+            padding: 0 20px;
+        }
+
+        #section2 .p4 form legend {
+            font-family: arial, sans-serif;
+            font-weight: bold;
+            font-size: 90%;
+            color: #666;
+            background: #eee;
+            border: 1px solid #ccc;
+            border-bottom-color: #999;
+            border-right-color: #999;
+            padding: 4px 8px;
+        }
+    </style>
+</head>
+
+<body id="chapter5-1">
+
+    <div id="pageHeader">
+        <header>
+            <h1>第5章 表单
+            </h1>
+        </header>
+    </div>
+
+
+    <div id="section1">
+        <h2>
+            标记表单的方法
+        </h2>
+        <h3>
+            方法A:使用表格
+        </h3>
+        <div class="p1">
+
+            <form action="/path/to/script" method="post">
+
+                <table>
+
+                    <tr>
+
+                        <th>Name:</th>
+
+                        <td>
+                            <input type="text" name="name" />
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>Email:</th>
+
+                        <td>
+                            <input type="text" name="email" />
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>&nbsp;</th>
+
+                        <td>
+                            <input type="submit" value="submit" />
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </form>
+
+        </div>
+
+        <p>左列是向右对齐的文字说明,右列则是相左对齐的表单元素.使用单纯的两列表格,是完成易用表单排版的简单方法之一. </p>
+        <p>然而,对这样简单的表单来说,或许我会避免选择使用表格,并且换用其他不需要使用这么多标签的方法. </p>
+        <h3>
+            方法B:不用表格,但挤在一起
+        </h3>
+
+        <div class="p2">
+
+            <form action="/path/to/script" method="post">
+
+                <p>
+
+                    Name:
+                    <input type="text" name="name" />
+                    <br /> Email:
+                    <input type="text" name="email" />
+                    <br />
+
+                    <input type="submit" value="submit" />
+
+                </p>
+
+            </form>
+
+        </div>
+        <p> 虽然我们不用表格就能完成排版,但是它看起来有点挤,有点丑.同时我们也遇上表单元素无法完美对齐的问题.</p>
+        <h3>
+            方法C:朴素,更容易使用
+        </h3>
+        <div class="p3">
+
+            <form action="/path/to/script" id="thisform" method="post">
+
+                <p>
+                    <label for="name">Name:</label>
+                    <br />
+
+                    <input type="text" id="name" name="name" />
+                </p>
+
+                <p>
+                    <label for="email">Email:</label>
+                    <br />
+
+                    <input type="text" id="email" name="email" />
+                </p>
+
+                <p>
+                    <input type="submit" value="submit" />
+                </p>
+
+            </form>
+
+        </div>
+        <p> 方法C与前两种方法的另一个不同之处在于:尽管每个群组(说明和输入框)都放在 p 里头,我们仍以 br 把他们放在独立的一行.使用 br 分开每个元素,就能绕过文字长短不一,造成输入项无法完美对齐的问题.</p>
+
+        <h3>
+            label 标签
+        </h3>
+        <p> 首先是以 label 将文字说明与相关的表单元素连接在一起,不管是文字输入框(text field),文字区块输入框(text area),单选框(radio),多选框(checkbox)等等都好.</p>
+        <p> 第二步则是为 label 标签加上for属性,填上对应输入框的id.</p>
+        <h3>
+            为什么要用 lable 标签?
+        </h3>
+        <p> ·建立label / ID的关联能让屏幕阅读器为每个表单元素读出正确的标签,而不收版面排列方法的影响.</p>
+        <p> ·label 标签正是为了标记表单栏标签而生,使用这个标签的时候,我们就是在为每个元素说明意义,强化表单的结构.</p>
+        <p> ·在处理单选,多选框时使用 label 标签还有个额外的好处,那就是大多数浏览器在使用者点击 label 内文字时也会改变元素的值.这样能为输入元素造成更大的点击区域.</p>
+        <div class="p4">
+
+            <form action="/path/to/script" id="thisform1" method="post">
+
+                <p>
+                    <label for="name1">Name:</label>
+                    <br />
+
+                    <input type="text" id="name1" name="name" />
+                </p>
+
+                <p>
+                    <label for="email1">Email:</label>
+                    <br />
+
+                    <input type="text" id="email1" name="email" />
+                </p>
+
+                <p>
+                    <input type="checkbox" id="remember" name="remember" />
+
+                    <label for="remember">Remember this info?</label>
+                </p>
+
+                <p>
+                    <input type="submit" value="submit" />
+                </p>
+
+            </form>
+
+
+        </div>
+        <p> 借着以这种方式标记多选框,可以获得两个好处:屏幕阅读器能读出正确的说明文字(就像这个例子一样,文字出现在输入框之后也行),而且能切换多选框的范围变大了,现在切换范围除了多选框本身之外,文字部分也包含在内(大多数浏览器都支持).</p>
+
+
+        <h3>
+            方法D:定义一个表单
+        </h3>
+        <div class="p5">
+
+            <form action="/path/to/script" id="thisform2" method="post">
+
+                <dl>
+
+                    <dt>
+                        <label for="name2">Name:</label>
+                    </dt>
+
+                    <dd>
+                        <input type="text" id="name2" name="name" />
+                    </dd>
+
+                    <dt>
+                        <label for="email2">Email:</label>
+                    </dt>
+
+                    <dd>
+                        <input type="text" id="email2" name="email" />
+                    </dd>
+
+                    <dt>
+                        <label for="remember2">Remember this info?</label>
+                    </dt>
+
+                    <dd>
+                        <input type="checkbox" id="remember2" name="remember" />
+                    </dd>
+
+                    <dt>
+                        <input type="submit" value="submit" />
+                    </dt>
+
+                </dl>
+
+            </form>
+
+        </div>
+        <p> 以定义清单定义每一组说明文字与输入框.这是有点争议的方法.我们在定义清单的原始设计目的的边缘游走.</p>
+        <p> 每组表单说明文字都放在定义名词标签 dt 之内,随后跟着放在定义描述标签 dd 中的表单元素.这么做能将说明文字与表单元素对配起来.</p>
+        <h3>
+            dt浮动效果
+        </h3>
+
+        <div class="p6">
+
+            <form action="/path/to/script" id="thisform3" method="post">
+
+                <dl>
+
+                    <dt>
+                        <label for="name3">Name:</label>
+                    </dt>
+
+                    <dd>
+                        <input type="text" id="name3" name="name" />
+                    </dd>
+
+                    <dt>
+                        <label for="email3">Email:</label>
+                    </dt>
+
+                    <dd>
+                        <input type="text" id="email3" name="email" />
+                    </dd>
+
+                    <dt>
+                        <label for="remember3">Remember this info?</label>
+                    </dt>
+
+                    <dd>
+                        <input type="checkbox" id="remember3" name="remember" />
+                    </dd>
+
+                    <dt>
+                        <input type="submit" value="submit" />
+                    </dt>
+
+                </dl>
+
+            </form>
+
+        </div>
+        <p> 在把 dt 元素浮动到左边之后,包含在 dd 之内的表单元素就会排列到右侧.</p>
+        <p> 事实上,由于多了 dl dt 和 dd 元素,再加上表单内原本就具备的 label 与 input 元素,因此在设计CSS时,你拥有更多可以指定样式的对象,而发挥的空间也变大了.</p>
+    </div>
+
+
+    <div id="section2">
+        <h2>
+            技巧延伸
+        </h2>
+        <h3>
+            神奇的tabindex
+        </h3>
+        <div class="p1">
+
+            <form action="/path/to/script" id="thisform4" method="post">
+
+                <p>
+                    <label for="name4">Name:</label>
+                    <br />
+
+                    <input type="text" id="name4" name="name" tabindex="1" />
+                </p>
+
+                <p>
+                    <label for="email4">Email:</label>
+                    <br />
+
+                    <input type="text" id="email4" name="email" tabindex="2" />
+                </p>
+
+                <p>
+                    <input type="checkbox" id="remember4" name="remember" tabindex="3" />
+
+                    <label for="remember4">Remember this info?</label>
+                </p>
+
+                <p>
+                    <input type="submit" value="submit" tabindex="4" />
+                </p>
+
+            </form>
+
+        </div>
+
+        <p> 在设计复杂,单一行有许多输入框或者其他表单元素的表单时,使用tabindex设定切换顺序的优点就显而易见了.</p>
+        <h3>
+            为频繁使用的表单指定快捷键
+        </h3>
+        <div class="p2">
+
+
+            <form action="/path/to/script" id="thisform5" method="post">
+
+                <p>
+                    <label for="name5" accesskey="9">Name:</label>
+                    <br />
+
+                    <input type="text" id="name5" name="name" tabindex="1" />
+                </p>
+
+                <p>
+                    <label for="email5">Email:</label>
+                    <br />
+
+                    <input type="text" id="email5" name="email" tabindex="2" />
+                </p>
+
+                <p>
+                    <input type="checkbox" id="remember5" name="remember" tabindex="3" />
+
+                    <label for="remember5">Remember this info?</label>
+                </p>
+
+                <p>
+                    <input type="submit" value="submit" tabindex="4" />
+                </p>
+
+            </form>
+
+
+        </div>
+
+        <p> 要是我们加上accesskey="9"的搜索位置时,windows使用者可以按Alt+9,而Mac使用者则能以Command+9直接切换到搜索输入框内了.
+        </p>
+        <h3>
+            使用 label 自定字体
+        </h3>
+        <div class="p3">
+
+
+            <form action="/path/to/script" id="thisform6" method="post">
+
+                <p>
+                    <label for="name6" accesskey="9">Name:</label>
+                    <br />
+
+                    <input type="text" id="name6" name="name" tabindex="1" />
+                </p>
+
+                <p>
+                    <label for="email6">Email:</label>
+                    <br />
+
+                    <input type="text" id="email6" name="email" tabindex="2" />
+                </p>
+
+                <p>
+                    <input type="checkbox" id="remember6" name="remember" tabindex="3" />
+
+                    <label for="remember6">Remember this info?</label>
+                </p>
+
+                <p>
+                    <input type="submit" value="submit" tabindex="4" />
+                </p>
+
+            </form>
+
+
+        </div>
+        <p> 也能先为表单中的所有文字制定一种样式,接着再为 label 特别指定样式,以便做出独特的表单元素显示效果.
+        </p>
+
+        <h3>
+            以 fieldset 制作表单元素群组
+        </h3>
+        <div class="p4">
+
+            <form action="/path/to/script" id="thisform7" method="post">
+
+                <fieldset>
+
+                    <legend>Sign In</legend>
+
+                    <p>
+                        <label for="name7" accesskey="9">Name:</label>
+                        <br />
+
+                        <input type="text" id="name7" name="name" tabindex="1" />
+                    </p>
+
+                    <p>
+                        <label for="email7">Email:</label>
+                        <br />
+
+                        <input type="text" id="email7" name="email" tabindex="2" />
+                    </p>
+
+                    <p>
+                        <input type="checkbox" id="remember7" name="remember" tabindex="3" />
+
+                        <label for="remember7">Remember this info?</label>
+                    </p>
+
+                    <p>
+                        <input type="submit" value="submit" tabindex="4" />
+                    </p>
+
+                </fieldset>
+
+            </form>
+
+        </div>
+        <p> 也能先为表单中的所有文字制定一种样式,接着再为 label 特别指定样式,以便做出独特的表单元素显示效果.
+        </p>
+    </div>
+
+</body>
+
+</html>
