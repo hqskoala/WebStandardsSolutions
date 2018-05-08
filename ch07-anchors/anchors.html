@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>标准化设计解决方案-标记语言和样式手册</title>
+    <style type="text/css">
+        #section1 .p1 {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body id="chapter7-1">
+
+    <div id="pageHeader">
+        <header>
+            <h1>第7章 锚点
+            </h1>
+        </header>
+    </div>
+
+
+    <div id="section1">
+        <h2>
+
+        </h2>
+        <h3>
+            方法A:空洞的名称
+        </h3>
+        <div class="p1">
+            <p>
+                <a href="#oranges1">About Oranges</a>
+            </p>
+
+            ...一些文字...
+
+            <a name="oranges1"></a>
+
+            <h2>Oranges Are Tasty</h2>
+
+            ...更多文字...
+        </div>
+
+        <p> 使用一个内容空白的锚点标签再配上name属性,标记特定的链接点.</p>
+        <p> 效果不错,但是浪费一个内容空白的标签来标识链接位置有点不合语义,方法B能改进这点.</p>
+        <h3>
+            方法B:全部在名称之内
+        </h3>
+
+        <div class="p2">
+            <p>
+                <a href="#oranges2">About Oranges</a>
+            </p>
+
+            ...一些文字...
+
+            <h2>
+                <a name="oranges2">Oranges Are Tasty</a>
+            </h2>
+
+            ...更多文字...
+        </div>
+        <p> 这次我们把它包在我想要链接的标题外面,这么做看起来的确比较符合语义</p>
+        <p> 我们不仅说明了这段文字是标题标签的一部分,同时也是这个页面的连接锚点之一.</p>
+        <h3>
+            小心 a 的全局样式
+        </h3>
+        <p> 如果你为所有的 a 元素指定了全局的CSS样式的话(颜色,文字大小,文字装饰等等),这些样式就会覆盖你为 h2 元素指定的样式.</p>
+        <h3>
+            更丰富的名称属性
+        </h3>
+        <p> 在处理不属于英文字母的字符时,这个功能十分重要.</p>
+        <h3>
+            方法C:丢掉名称
+        </h3>
+        <div class="p3">
+            <p>
+                <a href="#oranges3">About Oranges</a>
+            </p>
+
+            ...一些文字...
+
+            <h2 id="oranges3">Oranges Are Tasty</h2>
+
+            ...更多文字...
+        </div>
+        <p> id属性的功能就像name属性,同样能为页面指定锚点,除此之外,方法C还消除了方法A,B使用name属性是需要的额外 a 标签,我们减少了源代码,这向来是好事.</p>
+        <h3>
+            一石二鸟
+        </h3>
+        <div class="p4">
+            <p>
+                <a href="#comments">Add a Comment!</a>
+            </p>
+
+            ...很多文字...
+
+            <form id="comments" action="/path/to/script">
+
+                ...表单元素...
+
+            </form>
+        </div>
+        <p> 在大多数情况下,我们都能为先前存在id属性添加样式或者scripting,这是方法C的另一个好处.由于这个缘故,我们不需要为仅仅设定锚点而加上额外的代码.</p>
+        <h3>
+            方法D:合而为一
+        </h3>
+        <div class="p5">
+            <p>
+                <a href="#oranges5">About Oranges</a>
+            </p>
+
+            ...一些文字...
+
+            <h2>
+                <a id="oranges5" name="oranges5">Oranges Are Tasty</a>
+            </h2>
+
+            ...更多文字...
+        </div>
+        <p> ,也只有几个特定的标签允许这么做,精确来说,包含了a .因此,我们把id="oranges"从 h2 移到锚点标签之内.</p>
+
+
+    </div>
+
+
+    <div id="section2">
+        <h2>
+            技巧延伸
+        </h2>
+        <h3>
+            title属性
+        </h3>
+        <div class="p1">
+            I just read
+            <a href="http://www.downwithwallpaper.com/tips.html" title="How to Take Down Wallpaper">a great article</a> that gave me a few home improvement tips.
+        </div>
+        <div class="p2">
+            I just read
+            <a href="http://www.downwithwallpaper.com/tips.html" title="DownWithWallpaper.com | How to Take Down Wallpaper">a great article</a> that gave me a few home improvement tips.
+        </div>
+        <p>tooltips </p>
+        <h3>
+            为链接加上样式
+        </h3>
+        <p>在文件的HTML内定义链接色彩的时代已经过去了,现在我们能改用:link,:visited,:active,:hover这些伪类为超链接指定各种独特的样式,把这些设计细节跟标签分开. </p>
+        <h3>
+            令人又爱又恨的链接(LoVe/HAte)
+        </h3>
+        <p>为了让之前提到的四个伪类能正常运作,排列的顺序变得十分重要,以防他们的设定值彼此覆盖. </p>
+        <code>
+            a:link (L) a:visited (V) a:hover (H) a:active (A)
+        </code>
+
+    </div>
+
+</body>
+
+</html>
