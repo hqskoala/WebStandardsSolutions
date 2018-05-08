@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>标准化设计解决方案-标记语言和样式手册</title>
+    <style type="text/css">
+        #section1 .p1 .sideheading {
+            font-family: Georgia, serif;
+            color: #c63;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #section1 .p1 .sidelinks {
+            list-style-type: none;
+        }
+
+        #section1 .p1 .link {
+            font-weight: bold;
+        }
+
+        #sidebar1 h3 {
+            font-family: Georgia, serif;
+            color: #c63;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #sidebar1 ul {
+            list-style-type: none;
+        }
+
+        #sidebar1 li {
+            font-weight: bold;
+        }
+
+        #sitemap {
+            font-size: 140%;
+            font-weight: bold;
+            color: #f63;
+
+        }
+
+        #sitemap li {
+            list-style: none;
+            /* turns off bullets */
+        }
+
+        #sitemap li ul {
+            margin: 6px 15px;
+            padding: 0 15px;
+            font-size: 90%;
+            color: #000;
+            border-left: 1px dotted #999;
+        }
+
+        /* for third-level */
+
+        #sitemap li ul li ul {
+            border: none;
+        }
+
+        #sitemap li ul li ul li {
+            font-weight: normal;
+            padding-left: 16px;
+            background: url(bullet.gif) no-repeat 0 50%;
+        }
+    </style>
+</head>
+
+<body id="chapter1-1">
+
+    <div id="pageHeader">
+        <header>
+            <h1>第9章 精简标签
+            </h1>
+        </header>
+    </div>
+
+
+    <div id="section1">
+        <p>先前我们不断提到结构化内容能够把结构与设计细节分类并精简标签,该怎么做呢?我们可以使用符合标准的XHTML与CSS代替表格,图片制作我们所需要的版面.</p>
+        <p>通过在CSS中使用后代选择器(descendant selectors),我们就能消除多余的 div , span 与分类属性. </p>
+        <h2>
+            以标准技术制作网站时,如何精简标签?
+        </h2>
+        <p>精简标签是个值得讨论的重要话题,制作网站时,用合法的XHTML书写,用CSS设定展示效果能得到的巨大好处之一,就是精简标签.</p>
+        <h2>
+            后代选择器
+        </h2>
+        <h3>
+            方法A:滥用类
+        </h3>
+        <div class="p1">
+            <div id="sidebar">
+
+                <h3 class="sideheading">About This Site</h3>
+
+                <p>This is my site.</p>
+
+                <h3 class="sideheading">My Links</h3>
+
+                <ul class="sidelinks">
+
+                    <li class="link">
+                        <a href="archives.html">Archives</a>
+                    </li>
+
+                    <li class="link">
+                        <a href="about.html">About Me</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+        <p>每个标签都加上了杂乱的类,以便对它们有完全控制权.</p>
+
+        <h3>
+            方法B:自然的选择
+        </h3>
+        <div class="p2">
+            <div id="sidebar1">
+
+                <h3 class="sideheading">About This Site</h3>
+
+                <p>This is my site.</p>
+
+                <h3 class="sideheading">My Links</h3>
+
+                <ul class="sidelinks">
+
+                    <li class="link">
+                        <a href="archives.html">Archives</a>
+                    </li>
+
+                    <li class="link">
+                        <a href="about.html">About Me</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+        <p>这种根据内容前后关系指定样式的做法是缩短标记内容的关键.通常在为内容设计好语义结构之后,就不必为标签加上分类属性了. </p>
+        <h3>
+            不止用在侧边栏
+        </h3>
+        <p>我们只展示了页面的一个段落(就是侧边栏),不过这个做法可以应用到整个页面结构上,只要将标记内容依照逻辑分成几个段落(或许是#nav,#content,#sidebar,#footer),然后以继承选择器为这个段落内的标签分别制定特殊样式就可以了.</p>
+        <p>我们可以通过一个全局样式指定所有 h3 标签共用的规则,然后用后代选择器根据标签的位置设定颜色.</p>
+        <h3>
+            越少类越好维护
+        </h3>
+        <p>除了减少需要使用的源代码空间之外,用后代选择器代替多余类还代表了标记内容未来易于扩展.</p>
+
+    </div>
+
+
+    <div id="section2">
+        <h2>
+            不必要的 div
+        </h2>
+        <h3>
+            方法A:使用 div
+        </h3>
+
+        <div class="p1">
+            <div id="nav">
+
+                <ul>
+
+                    <li>
+                        <a href="archives.html">Archives</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+        <p> </p>
+        <h3>
+            方法B:去掉 div
+        </h3>
+
+        <div class="p2">
+            <ul id="nav1">
+
+                <li>
+                    <a href="archives.html">Archives</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+            </ul>
+        </div>
+
+        <p> 事实上,考虑所有外包标签的存在意义十分重要,它真的需要放在哪里吗?有没有现存的块级元素可以使用?简洁的标记代码不难办到.</p>
+    </div>
+
+    <div id="section3">
+        <h2>
+            技巧延伸
+        </h2>
+        <h3>
+            原始的标记
+        </h3>
+
+        <div class="p1">
+            <ul>
+
+                <li>Weblog</li>
+
+                <li>Articles
+
+                    <ul>
+
+                        <li>How to Beat the Red Sox</li>
+
+                        <li>Pitching Past the 7th Inning
+
+                            <ul>
+
+                                <li>Part I</li>
+
+                                <li>Part II</li>
+
+                            </ul>
+
+                        </li>
+
+                        <li>Eighty-Five Years Isn't All That Long, Really</li>
+
+                    </ul>
+
+                </li>
+
+                <li>About</li>
+
+            </ul>
+        </div>
+
+        <p> </p>
+        <h3>
+            加上样式
+        </h3>
+
+        <div class="p2">
+            <ul id="sitemap">
+
+                <li>Weblog</li>
+
+                <li>Articles
+
+                    <ul>
+
+                        <li>How to Beat the Red Sox</li>
+
+                        <li>Pitching Past the 7th Inning
+
+                            <ul>
+
+                                <li>Part I</li>
+
+                                <li>Part II</li>
+
+                            </ul>
+
+                        </li>
+
+                        <li>Eighty-Five Years Isn't All That Long, Really</li>
+
+                    </ul>
+
+                </li>
+
+                <li>About</li>
+
+            </ul>
+        </div>
+
+        <p> </p>
+    </div>
+
+</body>
+
+</html>
