@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>标准化设计解决方案-标记语言和样式手册</title>
+    <style type="text/css">
+        #fir {
+            width: 119px;
+            height: 24px;
+            background: url(head.png) no-repeat;
+        }
+
+        #fir span {
+            display: none;
+        }
+
+        #lir {
+            padding: 24px 0 0 0;
+            overflow: hidden;
+            background: url(head.png) no-repeat;
+            height: 0px !important;
+            /* for most browsers */
+            height/**/
+            : 24px;
+            /* for IE5/Win */
+        }
+
+        #phark {
+            height: 26px;
+            text-indent: -5000px;
+            background: url(head.png) no-repeat;
+        }
+    </style>
+</head>
+
+<body id="chapter14-1">
+
+    <div id="pageHeader">
+        <header>
+            <h1>第14章 图片替换
+            </h1>
+        </header>
+    </div>
+
+
+    <div id="section1">
+        <h2>
+            应该如何用CSS把文字换成图片?
+        </h2>
+        <h2>
+            方法A: Fahrner图片替换(FIR)
+        </h2>
+        <div id="fir">
+            <span>Fahrner Image Replacement</span>
+        </div>
+
+        <h3>
+            隐藏文字
+        </h3>
+        <p> 首先,让用 span 标签的display属性把文字隐藏起来.</p>
+        <h3>
+            指定背景
+        </h3>
+        <p> 使用background属性指定替换图片的长宽以及图片名称.</p>
+
+        <h2>
+            方法B: Leahy / Langridge 图片替换法 (LIR)
+        </h2>
+        <p> LIR不用display属性隐藏文字,而是把外包元素的高度设为0,并将padding-top设成与替换图片高度相同,把文字挤开.</p>
+        <div id="lir">Leahy/Langridge Image Replacement </div>
+
+        <h3>
+            凄惨的盒模型
+        </h3>
+        <p> 由于IE5 for Windows会把内边距累加在宽度,高度之内,因此需要特别为这个浏览器提供矫正过的数值.</p>
+        <h2>
+            方法C: Phark法
+        </h2>
+        <p> 为想要隐藏的文字指定很大的负数text-indent值.</p>
+        <div id="phark">The Phark Method </div>
+
+    </div>
+
+
+    <div id="section2">
+        <h2>
+
+        </h2>
+
+        <div class="p1">
+
+        </div>
+
+        <p> </p>
+
+    </div>
+
+</body>
+
+</html>
