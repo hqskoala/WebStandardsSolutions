@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>标准化设计解决方案-标记语言和样式手册</title>
+    <style type="text/css">
+        #section1 .p1 {
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                font-family: "Times New Roman", serif;
+                font-size: 12pt;
+            }
+
+            #nav,
+            #sidebar,
+            #search {
+                display: none;
+            }
+
+            a:link,
+            a:visited {
+                color: blue;
+                text-decoration: underline;
+            }
+
+            #content a:link:after,
+            #content a:visited:after {
+                content: " (" attr(href) ") ";
+
+            }
+        }
+    </style>
+</head>
+
+<body id="chapter11-1">
+
+    <div id="pageHeader">
+        <header>
+            <h1>第11章 打印样式
+            </h1>
+        </header>
+    </div>
+
+
+    <div id="section1">
+        <h2>
+            如何指定打印时采用的样式?
+        </h2>
+        <p> 我们能为CSS指定媒体类型(media),声明媒体类型将能使样式针对特定媒体发挥作用.</p>
+        <h2>
+            媒体类型
+        </h2>
+        <h2>
+            指定媒体的两种方法
+        </h2>
+        <h3>
+            方法A:Media属性
+        </h3>
+        <p> media="screen"</p>
+        <h3>
+            方法B:@media或@import
+        </h3>
+        <p> @import url("screenstyles.css") screen;</p>
+        <p> @media print {}</p>
+
+        <h2>
+            设计一份打印样式表
+        </h2>
+        <h3>
+            用点数指定大小
+        </h3>
+        <p> 在打印样式表里,用点数制定字体大小是件十分合理的事情.font-size: 12pt;</p>
+        <h3>
+            隐藏不必要的标签节省墨水
+        </h3>
+        <p> 像是导航链接,侧边栏,表单以及广告栏之类的元素在打印时经常只会浪费墨水,我们可以在打印样式表内使用display属性将它们设为不显示.display: none;</p>
+        <p> 现在再度证实,以逻辑页面"段落"组织标记结构让未来设计样式更方便.如果页面中有个广告横幅,为它指定id很合理,因为这能把控制权交给CSS.在这个例子中,是在打印时将它隐藏起来.
+        </p>
+        <p> 去掉背景图片和颜色也是节省墨水,让打印结果更容易阅读的技巧之一.</p>
+        <h2>
+            暴露链接
+        </h2>
+        <p> 我们能用:after 这个伪类来编写CSS,让支持的浏览器在超连接文字后面打印出它所连接的URL,content: " (" attr(href) ") ";</p>
+        <h3>
+            链接文字
+        </h3>
+        <p> 别忘了以独特的方式强调链接文字,让读者能在阅读一般内容时,轻易辨别夹杂在内的超链接.text-decoration: underline;</p>
+      
+
+        <div class="p1">
+
+        </div>
+
+
+
+    </div>
+
+
+    <div id="section2">
+        <h2>
+
+        </h2>
+
+        <div class="p1">
+
+        </div>
+
+        <p> </p>
+
+    </div>
+
+</body>
+
+</html>
