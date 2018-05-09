@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>标准化设计解决方案-标记语言和样式手册</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        #header1 {
+            padding: 20px;
+            background: #ccc;
+        }
+
+        #sidebar1 {
+            float: right;
+            width: 30%;
+            background: #999;
+        }
+
+        #content1 {
+            margin-right: 34%;
+        }
+
+        #footer1 {
+            clear: right;
+            padding: 20px;
+            background: #eee;
+        }
+
+        #header2 {
+            padding: 20px;
+            background: #ccc;
+        }
+
+        #content2 {
+            float: left;
+            width: 66%;
+        }
+
+        #sidebar2 {
+            float: right;
+            width: 30%;
+            background: #999;
+        }
+
+        #footer2 {
+            clear: both;
+            padding: 20px;
+            background: #eee;
+        }
+
+        #header3 {
+            padding: 20px;
+            background: #ccc;
+        }
+
+        #content3 {
+            float: left;
+            width: 66%;
+        }
+
+        #sidebar3 {
+            background: #999;
+        }
+
+        #footer3 {
+            clear: left;
+            padding: 20px;
+            background: #eee;
+        }
+
+        #header3-1 {
+            padding: 20px;
+            background: #ccc;
+        }
+
+        #content3-1 {
+            float: left;
+            width: 66%;
+        }
+
+        #sidebar3-1 {
+            margin-left: 70%;
+            background: #999;
+        }
+
+        #footer3-1 {
+            clear: left;
+            padding: 20px;
+            background: #eee;
+        }
+
+        #header3-2 {
+            padding: 20px;
+            background: #ccc;
+        }
+
+        #content3-2 {
+            float: left;
+            width: 66%;
+            margin-right: 6%;
+        }
+
+        #footer3-2 {
+            clear: left;
+            padding: 20px;
+            background: #eee;
+        }
+
+
+        #header4 {
+            height: 40px;
+            background: #ccc;
+        }
+
+        #content4 {
+            margin-right: 34%;
+        }
+
+        #sidebar4 {
+            position: absolute;
+            top: 1945px;
+            right: 0;
+            width: 30%;
+            background: #999;
+        }
+
+        #footer4 {
+            margin-right: 34%;
+            padding: 20px;
+            background: #eee;
+        }
+
+
+
+        #header4-1 {
+            height: 40px;
+            background: #ccc;
+        }
+
+        #content4-1 {
+            margin-right: 24%;
+            margin-left: 24%;
+        }
+
+        #sidecolumn4-1 {
+            position: absolute;
+            top: 2560px;
+            left: 0;
+            width: 20%;
+            background: #999;
+        }
+
+        #sidebar4-1 {
+            position: absolute;
+            top: 2560px;
+            right: 0;
+            width: 20%;
+            background: #999;
+        }
+
+        #footer4-1 {
+            margin-right: 24%;
+            margin-left: 24%;
+            padding: 20px;
+            background: #eee;
+        }
+
+
+        #content5 {
+            float: right;
+            width: 66%;
+        }
+
+        #sidebar5 {
+            float: left;
+            width: 33%;
+            background: #ccc url(tile.png) repeat-y 50% 0;
+        }
+    </style>
+</head>
+
+<body id="chapter12-1">
+
+    <div id="pageHeader">
+        <header>
+            <h1>第12章 CSS布局
+            </h1>
+        </header>
+    </div>
+
+
+    <div id="section1">
+        <h2>
+            要如何以CSS作出两栏版面布局?
+        </h2>
+        <ul>
+            <li>#header: 包含标题图片,导航栏等 </li>
+            <li>#sidebar: 包含额外的内容链接与相关资讯 </li>
+            <li>#content: 包含主要的文字内容,也是页面的焦点所在. </li>
+            <li>#footer: 包含版权信息,作者,辅助链接等</li>
+        </ul>
+        <h2>
+            方法A:浮动侧边栏
+        </h2>
+
+
+        <div id="header1">
+
+            ...页头部分...
+
+        </div>
+
+        <div id="sidebar1">
+
+            ...侧边栏部分...
+
+        </div>
+
+        <div id="content1">
+
+            ...主体部分...
+
+        </div>
+
+        <div id="footer1">
+
+            ...页脚部分...
+
+        </div>
+
+        <h3>
+            为页首与页尾指定样式
+        </h3>
+        <h3>
+            浮动侧边栏
+        </h3>
+        <p> 浮动#sidebar的关键在于,在标记源代码中,必须出现在主内容 div 之前,这样一来,侧边栏的顶部就会与主内容的顶部排齐.</p>
+
+        <h2>
+            方法B:双重浮动
+        </h2>
+        <div id="header2">
+
+            ...header content here...
+
+        </div>
+
+        <div id="content2">
+
+            ...main content here...
+
+        </div>
+
+        <div id="sidebar2">
+
+            ...sidebar content here...
+
+        </div>
+
+        <div id="footer2">
+
+            ...footer content here...
+
+        </div>
+        <p> 侧边栏放到主内容 div 的前面,这样实在不严谨. </p>
+        <p> 通过把两个 div 浮动到不同方向,就能以最恰当的方式排列 </p>
+        <h3>
+            避开两边
+        </h3>
+        <p> 必须将#footer 的 clear属性设为both </p>
+        <h2>
+            方法C:浮动主内容
+        </h2>
+        <div id="header3">
+
+            ...页头内容...
+
+        </div>
+
+        <div id="content3">
+
+            ...主内容...
+
+        </div>
+
+        <div id="sidebar3">
+
+            ...侧边栏...
+
+        </div>
+
+        <div id="footer3">
+
+            ...页尾内容...
+
+        </div>
+        <p> 只要将主内容的 div 浮动到左侧,并且为它设定小于100%的宽度,如此一来就能在右侧留下足够空间摆放侧边栏. </p>
+        <h3>
+            CSS内容
+        </h3>
+        <p> 不需要定义侧边栏的宽度,因为它会自动填满主内容 div 用剩下的空间 </p>
+        <h3>
+            悲惨的背景
+        </h3>
+        <p> 由于侧边栏并未制定宽度,因此它想扩到与浏览器视窗一样宽. </p>
+        <p> 这个部分只要我们能在侧边栏左边加上宽度与内容区相同的内边距便可以避开这个问题. </p>
+        <div id="header3-1">
+
+            ...页头内容...
+
+        </div>
+
+        <div id="content3-1">
+
+            ...主内容...
+
+        </div>
+
+        <div id="sidebar3-1">
+
+            ...侧边栏...
+
+        </div>
+
+        <div id="footer3-1">
+
+            ...页尾内容...
+
+        </div>
+        <h3>
+            简单朴素
+        </h3>
+        <p> 如果设计不需要用到背景色的话 . </p>
+
+        <div id="header3-2">
+
+            ...页头内容...
+
+        </div>
+
+        <div id="content3-2">
+
+            ...主内容...
+
+        </div>
+
+        <div id="sidebar3-2">
+
+            ...侧边栏...
+
+        </div>
+
+        <div id="footer3-2">
+
+            ...页尾内容...
+
+        </div>
+
+
+        <h2>
+            方法D:定位
+        </h2>
+        <div id="header4">
+
+            ...页头内容...
+
+        </div>
+
+        <div id="content4">
+
+            ...主内容...
+
+        </div>
+
+        <div id="sidebar4">
+
+            ...侧边栏...
+
+        </div>
+
+        <div id="footer4">
+
+            ...页尾内容...
+
+        </div>
+        <p> 在定位时,标记源代码内的顺序与页面元素出现的位置没有关系. </p>
+        <h3>
+            能够预测的高度
+        </h3>
+        <p> 我们需要能够预测的高度以便稍后为侧边栏定位.</p>
+        <h3>
+            为右栏留下空间
+        </h3>
+        <p> 要为#content这个 div 设定右内边距,就像前几个方法一样,这能为右侧边栏留下空间</p>
+        <h3>
+            放进侧边栏
+        </h3>
+        <p> 在指定position:absolute之后,就能以top与right坐标把#sidebar准确的放到所想的位置</p>
+        <h3>
+            页尾问题
+        </h3>
+        <p> 只要侧边栏比内容还长,它就会盖住页尾部分</p>
+        <p> 对这个问题我常用的解决方法之一,是为页尾指定与主内容一样的右内边距,让侧边栏能够延伸超过页尾.</p>
+        <h2>
+            三列
+        </h2>
+        <div id="header4-1">
+
+            ...页头内容...
+
+        </div>
+
+        <div id="sidecolumn4-1">
+
+            ...侧边栏...
+
+        </div>
+        <div id="content4-1">
+
+            ...主内容...
+
+        </div>
+
+        <div id="sidebar4-1">
+
+            ...侧边栏...
+
+        </div>
+
+        <div id="footer4-1">
+
+            ...页尾内容...
+
+        </div>
+    </div>
+
+
+    <div id="section2">
+        <h2>
+            技巧延伸
+        </h2>
+        <h2>
+            盒模型问题
+        </h2>
+        <p> 除了IE5 for Windows之外,所有支持CSS1的浏览器都会将外包元素的宽度计算为宽度width,内边距padding,边框border三者相加,这是W3C希望所有浏览器处理CSS盒模型的方式.</p>
+        <h2>
+            伪装的栏位
+        </h2>
+        <p> 如何让右栏的背景色一路延伸到整页底部的?</p>
+        <h3>
+            垂直伸展
+        </h3>
+        <p> 除了IE5 for Windows之外,所有支持CSS1的浏览器都会将外包元素的宽度计算为宽度width,内边距padding,边框border三者相加,这是W3C希望所有浏览器处理CSS盒模型的方式.</p>
+
+
+        <div id="content5">
+
+            ...主内容...
+            <br> ...主内容...
+            <br> ...主内容...
+            <br>
+        </div>
+
+        <div id="sidebar5">
+
+            ...侧边栏...
+
+        </div>
+        <h3>
+            作弊
+        </h3>
+        <h3>
+            栏位定位
+        </h3>
+        <h3>
+            只要有用就好
+        </h3>
+
+
+    </div>
+
+</body>
+
+</html>
