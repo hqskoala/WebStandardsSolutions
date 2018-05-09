@@ -5,7 +5,17 @@
     <title>标准化设计解决方案-标记语言和样式手册</title>
     <style type="text/css">
         #section1 .p1 {
-            margin: 0;
+            width: 200px;
+        }
+
+        #section1 .p1 .drop {
+            float: left;
+            font-size: 400%;
+            line-height: 1em;
+            margin: 4px 10px 10px 0;
+            padding: 4px 10px;
+            border: 2px solid #ccc;
+            background: #eee;
         }
     </style>
 </head>
@@ -39,7 +49,8 @@
         <h3>
             首字大写
         </h3>
-        <p> text-indent: 3em;</p>
+        <p class="p1">
+            <span class="drop">本</span>书将指导您采用标准设计策略来满足以各种方式浏览网页的各类用户的需要。每章首先列举一个沿用传统HTML技术的实例，然后指出该实例的局限性，并利用XHTML和CSS对其进行重构。</p>
         <h3>
             文字对齐
         </h3>
