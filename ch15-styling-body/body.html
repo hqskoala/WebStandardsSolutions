@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>标准化设计解决方案-标记语言和样式手册</title>
+    <style type="text/css">
+        .header {
+            background: #ccc;
+        }
+
+        .right {
+            float: right;
+            background: #999;
+        }
+
+        .left {
+            float: left;
+            background: #333;
+        }
+
+        .footer {
+            clear: both;
+            background: #eee;
+        }
+
+        .content,
+        .footer {
+            margin: 10px 190px 10px 10px;
+        }
+
+        body#chapter15-1 .p2 .content,
+        body#chapter15-1 .p2 .footer {
+            margin-left: 190px;
+        }
+
+        #minitabs li {
+            display: inline;
+        }
+
+        body#chapter12-1 #apples_tab a,
+        body#chapter13-1 #spag_tab a,
+        body#chapter14-1 #beans_tab a,
+        body#chapter15-1 #milk_tab a {
+            color: #000;
+            background: url(tab1.png) no-repeat bottom center;
+        }
+    </style>
+</head>
+
+<body id="chapter15-1">
+
+    <div id="pageHeader">
+        <header>
+            <h1>第15章 为body指定样式
+
+            </h1>
+        </header>
+    </div>
+
+
+    <div id="section1">
+
+        <p> 把内容与显示效果分开设定的好处之一就是灵活,通过用CSS控制网站的版面布局,就能控制整个网站的设计要素</p>
+        <p> 用CSS控制布局的的便利性示范之一,就是为body指定样式,通过为body标签加上class或者id,就能对页面的任何标签进行自定义控制.</p>
+        <h2>
+            两栏或者三栏的布局
+        </h2>
+        <p> 虽然所有页面都共享相同的导航,页尾区,但是也需要建立两种不同版面布局.
+        </p>
+        <h2>
+            标记和样式结构
+        </h2>
+        <h3>
+            内文页
+        </h3>
+        <div class="p1">
+            <div class="header">
+
+                ...header info here...
+
+            </div>
+
+            <div class="content">
+
+                ...content here...
+
+            </div>
+
+            <div class="right">
+
+                ...right column info...
+
+            </div>
+
+            <div class="footer">
+
+                ...footer info...
+
+            </div>
+
+        </div>
+
+        <p> </p>
+        <h3>
+            索引页
+        </h3>
+
+        <div class="p2">
+            <div class="header">
+
+                ...header info here...
+
+            </div>
+
+            <div class="content">
+
+                ...content here...
+
+            </div>
+
+            <div class="left">
+
+                ...left column info...
+
+            </div>
+
+            <div class="right">
+
+                ...right column info...
+
+            </div>
+
+            <div class="footer">
+
+                ...footer info...
+
+            </div>
+
+        </div>
+
+        <p>通过为div指定class,指定这个是索引页,就能为这个分类编写特殊的规则了. </p>
+
+    </div>
+
+
+    <div id="section2">
+        <h2>
+            导航清单
+        </h2>
+
+        <ul id="minitabs">
+
+            <li id="apples_tab">
+                <a href="/apples/">Apples</a>
+            </li>
+
+            <li id="spag_tab">
+                <a href="/spaghetti/">Spaghetti</a>
+            </li>
+
+            <li id="beans_tab">
+                <a href="/greenbeans/">Green Beans</a>
+            </li>
+
+            <li id="milk_tab">
+                <a href="/milk/">Milk</a>
+            </li>
+
+        </ul>
+
+        <p> 这个效果唯一需要变动的地方只有 body 标签的id,这样就能凸显使用者所在的页面.举例来说,如果想告诉浏览器目前正位于Apples页,就可以像这样为 body 加上id:</p>
+
+    </div>
+
+</body>
+
+</html>
